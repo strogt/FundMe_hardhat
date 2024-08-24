@@ -69,5 +69,14 @@ module.exports.tags = ["all", "fundme"]
     sepolia部署问题
     交易哈希：tx: 0x1baf1787b63f239ff2e47e051fb170c75fe2de52c87ba5249fdd4515f88400af
     地址合约：0x411C3Bb05f4627a7b0c6f6F7211ae1Cf0fd5DD6e
-    验证错误：Error: connect ECONNREFUSED（1、可能是被国外服务器拒绝本土 2、也有可能服务器的问题的）
+    最后一步验证出现的报错：
+
+        错误1：Error: TypeError: customChains is not iterable
+        解决：hardhat.config.js 增加 etherscan.customChains = []
+
+        错误2：Error: ConnectTimeoutError: Connect Timeout Error
+        解决：hardhat.config.js 增加 mocha.timeOut = 3000000
+        
+        错误3：Error: connect ECONNREFUSED
+        解决：未解决（1、可能是被国外服务器拒绝本土 2、也有可能服务器的问题的）
 */
